@@ -46,3 +46,36 @@ print("Usuarios que tienen errores pero no usan ninguna plataforma: ", errores_s
 
 
 #Logica:
+
+#Union A y B:
+
+usuarios = []
+
+for i in range (0, len(A)):
+    if A[i] not in usuarios:
+        usuarios.append(A[i])
+
+for i in range (0, len(B)):
+    if B[i] not in usuarios:
+        usuarios.append(B[i])
+
+#Clasificacion de usuarios:
+criticos = []
+no_criticos = []
+
+for i in range (0, len(usuarios)):
+
+    usuario = usuarios[i]
+
+    p = usuario in A
+    q = usuario in B
+    r = usuario in C
+
+    # (p OR q) AND r
+    if (p or q) and r:
+        criticos.append(usuario)
+    else:
+        no_criticos.append(usuario)
+
+print("Usuarios criticos: ", criticos)
+print("Usuarios no criticos: ", no_criticos)
