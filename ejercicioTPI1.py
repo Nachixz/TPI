@@ -79,3 +79,62 @@ for i in range (0, len(usuarios)):
 
 print("Usuarios criticos: ", criticos)
 print("Usuarios no criticos: ", no_criticos)
+
+
+#MATRICES
+
+
+M = [
+    [120, 150, 100],
+    [200, 180, 220],
+    [90, 110, 95]
+]
+
+# PROMEDIO POR FUNCION
+
+print("PROMEDIO POR FUNCION")
+
+for i in range(0, len(M)):
+
+    suma = 0
+
+    for j in range(0, len(M[i])):
+        suma = suma + M[i][j]
+
+    promedio = suma / len(M[i])
+
+    print("Funcion", i + 1, ":", promedio, "ms")
+
+
+# PROMEDIO POR SERVIDOR
+
+print("PROMEDIO POR SERVIDOR")
+
+for j in range(0, len(M[0])):
+
+    suma = 0
+
+    for i in range(0, len(M)):
+        suma = suma + M[i][j]
+
+    promedio = suma / len(M)
+
+    print("Servidor", j + 1, ":", promedio, "ms")
+    
+
+# MATRIS TRANSPUESTA
+    
+transpuesta = []
+
+for j in range(len(M[0])):
+    fila = []
+
+    for i in range(len(M)):
+        fila.append(M[i][j])
+
+    transpuesta.append(fila)
+
+print("\nMATRIZ TRANSPUESTA")
+
+for fila in transpuesta:
+    print(fila)
